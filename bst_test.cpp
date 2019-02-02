@@ -465,6 +465,38 @@ void test_dsagredo()
 	cout << "Ending test protocol alpha bravo foxtrot dsagredo" << endl;
 }
 
+void test_rileyk9() {
+  string arr[15] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+    "L", "M", "N", "O"};
+  BST<string> tree(arr, 15);
+
+  cout << tree << endl;
+
+  tree.Clear();
+  tree.Add("A");
+  tree.Add("B");
+  tree.Add("C");
+  tree.Add("D");
+  tree.Add("E");
+  tree.Add("F");
+  tree.Add("G");
+
+  BST<string> tree2;
+  tree2.Add("D");
+  tree2.Add("F");
+  tree2.Add("E");
+  tree2.Add("G");
+  tree2.Add("B");
+  tree2.Add("A");
+  tree2.Add("C");
+
+  tree.Rebalance();
+
+  assert(tree == tree2);
+
+  cout << "Done test_rileyk9()" << endl;
+}
+
 // Calling all test functions
 void testBSTAll() {
   test_pisan01();
@@ -481,4 +513,5 @@ void testBSTAll() {
   test_ravsneha();
   test_Nabu99();
   test_dsagredo();
+  test_rileyk9();
 }
